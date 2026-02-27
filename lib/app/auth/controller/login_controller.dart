@@ -19,10 +19,8 @@ class LoginController extends GetxController {
     };
 
     final String? token = await AuthApi.login(body: body);
-    print("hogar token $token");
 
     if (token != null) {
-      print("hogar token $token");
       await LocalStorage.saveApiToken(token: token);
       Get.offAllNamed(Routes.darazListingPage);
     }
